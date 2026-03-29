@@ -1,5 +1,6 @@
 export const WHATSAPP_NUMBER = '6281267597586';
 export const WHATSAPP_DISPLAY = '+62 812-6759-7586';
+export const PHONE_DISPLAY = WHATSAPP_DISPLAY;
 
 export const getSiteUrl = () => {
   const configuredSiteUrl = (import.meta.env.VITE_SITE_URL as string | undefined)?.trim();

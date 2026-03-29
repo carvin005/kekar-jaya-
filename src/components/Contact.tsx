@@ -1,5 +1,5 @@
 import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
-import { WHATSAPP_DISPLAY, createWhatsAppLink } from '../config/contact';
+import { PHONE_DISPLAY, WHATSAPP_DISPLAY, createWhatsAppLink } from '../config/contact';
 
 export function Contact() {
   return (
@@ -47,7 +47,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 mb-1">Telepon</p>
-                    <p className="text-gray-700">0895-3402-72534</p>
+                    <p className="text-gray-700">{PHONE_DISPLAY}</p>
                   </div>
                 </div>
 
