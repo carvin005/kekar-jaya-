@@ -233,7 +233,12 @@ export function ProductCatalog() {
     : products.filter(p => p.category === activeCategory);
 
   const handleOrderWhatsApp = (productName: string, imagePath: string) => {
-    const imageUrl = `${window.location.origin}${imagePath}`;
+    const configuredSiteUrl = (import.meta.env.VITE_SITE_URL as string | undefined)?.trim();
+    const siteUrl = configuredSiteUrl && configuredSiteUrl.length > 0
+      ? configuredSiteUrl.replace(/\/$/, '')
+      : window.location.origin;
+    const normalizedImagePath = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
+    const imageUrl = `${siteUrl}${normalizedImagePath}`;
     const message = encodeURIComponent(
       `Halo Toko Kekar Jaya, saya ingin pesan ${productName}\nFoto produk: ${imageUrl}`
     );
