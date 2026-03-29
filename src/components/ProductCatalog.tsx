@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { MessageCircle } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { createWhatsAppLink, getPublicAssetUrl } from '../config/contact';
 
 type ProductVariant = {
   name: string;
@@ -233,16 +234,8 @@ export function ProductCatalog() {
     : products.filter(p => p.category === activeCategory);
 
   const handleOrderWhatsApp = (productName: string, imagePath: string) => {
-    const configuredSiteUrl = (import.meta.env.VITE_SITE_URL as string | undefined)?.trim();
-    const siteUrl = configuredSiteUrl && configuredSiteUrl.length > 0
-      ? configuredSiteUrl.replace(/\/$/, '')
-      : window.location.origin;
-    const normalizedImagePath = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
-    const imageUrl = `${siteUrl}${normalizedImagePath}`;
-    const message = encodeURIComponent(
-      `Halo Toko Kekar Jaya, saya ingin pesan ${productName}\nFoto produk: ${imageUrl}`
-    );
-    window.open(`https://wa.me/6281267597586?text=${message}`, '_blank');
+    const imageUrl = getPublicAssetUrl(imagePath);
+    window.open(createWhatsAppLink(`Halo Toko Kekar Jaya, saya ingin pesan ${productName}\nFoto produk: ${imageUrl}`), '_blank');
   };
 
   return (

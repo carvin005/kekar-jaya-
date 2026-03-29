@@ -1,4 +1,5 @@
 import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { WHATSAPP_DISPLAY, createWhatsAppLink } from '../config/contact';
 
 export function Contact() {
   return (
@@ -24,7 +25,7 @@ export function Contact() {
               <div className="space-y-6">
                 {/* WhatsApp */}
                 <a
-                  href="https://wa.me/6281267597586?text=Halo%20Toko%20Kekar%20Jaya%2C%20saya%20ingin%20bertanya"
+                  href={createWhatsAppLink('Halo Toko Kekar Jaya, saya ingin bertanya')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-4 p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl hover:shadow-lg transition-all group"
@@ -34,7 +35,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 mb-1">WhatsApp (Preferred)</p>
-                    <p className="text-gray-700">+62 812-6759-7586</p>
+                    <p className="text-gray-700">{WHATSAPP_DISPLAY}</p>
                     <p className="text-sm text-green-600 mt-1">Klik untuk chat langsung</p>
                   </div>
                 </a>
@@ -105,7 +106,7 @@ export function Contact() {
                 Tim kami siap membantu Anda memilih produk terbaik untuk kucing kesayangan Anda.
               </p>
               <a
-                href="https://wa.me/6281267597586?text=Halo%20Toko%20Kekar%20Jaya%2C%20saya%20butuh%20bantuan"
+                href={createWhatsAppLink('Halo Toko Kekar Jaya, saya butuh bantuan')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-orange-600 px-6 py-3 rounded-full font-semibold hover:shadow-xl transition-all"

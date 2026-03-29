@@ -1,5 +1,6 @@
 import { Cat, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { createWhatsAppLink } from '../config/contact';
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,7 +58,7 @@ export function Navbar() {
               Kontak
             </button>
             <a
-              href="https://wa.me/6281267597586?text=Halo%20Toko%20Kekar%20Jaya%2C%20saya%20ingin%20bertanya"
+              href={createWhatsAppLink('Halo Toko Kekar Jaya, saya ingin bertanya')}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all"
@@ -103,7 +104,7 @@ export function Navbar() {
               Kontak
             </button>
             <a
-              href="https://wa.me/6281267597586?text=Halo%20Toko%20Kekar%20Jaya%2C%20saya%20ingin%20bertanya"
+              href={createWhatsAppLink('Halo Toko Kekar Jaya, saya ingin bertanya')}
               target="_blank"
               rel="noopener noreferrer"
               className="block mx-4 text-center bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full"

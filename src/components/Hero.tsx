@@ -1,5 +1,6 @@
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { createWhatsAppLink } from '../config/contact';
 
 export function Hero() {
   const scrollToSection = (id: string) => {
@@ -35,7 +36,7 @@ export function Hero() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <a
-                href="https://wa.me/6281267597586?text=Halo%20Toko%20Kekar%20Jaya%2C%20saya%20ingin%20bertanya"
+                href={createWhatsAppLink('Halo Toko Kekar Jaya, saya ingin bertanya')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-full hover:bg-orange-50 transition-all"

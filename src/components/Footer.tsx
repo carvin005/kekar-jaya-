@@ -1,4 +1,5 @@
 import { Cat, Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { WHATSAPP_DISPLAY } from '../config/contact';
 
 export function Footer() {
   const scrollToSection = (id: string) => {
@@ -108,7 +109,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-400">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+62 812-6759-7586</span>
+                <span>{WHATSAPP_DISPLAY}</span>
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-400">
                 <Mail className="w-4 h-4 flex-shrink-0" />

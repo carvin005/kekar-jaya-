@@ -1,10 +1,11 @@
 import { MessageCircle } from "lucide-react";
 import { motion } from "motion/react";
+import { createWhatsAppLink } from '../config/contact';
 
 export function FloatingWhatsApp() {
   return (
     <motion.a
-      href="https://wa.me/6281267597586?text=Halo%20Toko%20Kekar%20Jaya%2C%20saya%20ingin%20bertanya"
+      href={createWhatsAppLink('Halo Toko Kekar Jaya, saya ingin bertanya')}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-2xl hover:shadow-green-500/50 transition-all z-50 group"
